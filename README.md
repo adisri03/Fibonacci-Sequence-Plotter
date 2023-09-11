@@ -1,1 +1,1 @@
-# Plotting-Fibanoci
+# Fibonacci-Sequence-Plotter
