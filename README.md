@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python%2B-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-A Java program for managing a fictional library's book repository and return stack. This project allows library staff and users to digitize bookkeeping, check in/out books, track late returns, and more.
+This Python script allows you to generate and visualize the Fibonacci sequence within a given range of indices. The script utilizes the Matplotlib library for plotting and calculates Fibonacci numbers using a custom function.
 
 ## Table of Contents
 
