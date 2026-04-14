@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
 
 export type AlgorithmName = "iterative" | "fast_doubling" | "matrix";
 
@@ -29,6 +29,10 @@ export interface BenchmarkResponse {
 }
 
 async function getJson<T>(path: string): Promise<T> {
+  if (!API_BASE_URL) {
+    throw new Error("VITE_API_BASE_URL is missing");
+  }
+
   const response = await fetch(`${API_BASE_URL}${path}`);
   if (!response.ok) {
     const text = await response.text();
