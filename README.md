@@ -1,39 +1,90 @@
-# Fibonacci-Sequence-Plotter
+# Fibonacci Analytics Platform
 
-![Python](https://img.shields.io/badge/Python%2B-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
+Production style full stack platform for Fibonacci computation, benchmarking, analytics, and visualization.
 
-This Python script allows you to generate and visualize the Fibonacci sequence within a given range of indices. The script utilizes the Matplotlib library for plotting and calculates Fibonacci numbers using a custom function.
+## Stack
 
-## Table of Contents
+Backend:
+- FastAPI
+- Pydantic
+- Uvicorn
+- Pytest
 
-- [Introduction](#introduction)
-- [Getting Started](#getting-started)
+Frontend:
+- React
+- TypeScript
+- Vite
+- Recharts
 
+DevOps:
+- Docker
+- Docker Compose
+- GitHub Actions
 
+## Features
 
-## Introduction
+- Multiple Fibonacci algorithms
+- Iterative
+- Fast doubling
+- Matrix exponentiation
+- Continuous range generation
+- Runtime benchmarking
+- REST API
+- Interactive dashboard
+- Unit tests
+- Health checks
+- Type safe request and response models
 
-This Python script allows you to generate and visualize the Fibonacci sequence within a given range of indices. The script utilizes the Matplotlib library for plotting and calculates Fibonacci numbers using a custom function.
+## Repo layout
 
-## Getting Started
+```text
+fibonacci-analytics-platform/
+  backend/
+  frontend/
+  .github/workflows/
+  docker-compose.yml
+```
 
-1. Before using this script, make sure you have the following libraries installed:
-      Matplotlib
-      Plotly (for interactive graph options, though it's not currently used in the code)
-      You can install these libraries using pip:
-   ```bash
-   pip install matplotlib plotly
-   ```
+## Local run
 
-2. Specify the range of indices for which you want to generate Fibonacci numbers
-   ```bash
-   fib_arr = []  # To store the Fibonacci numbers
-   a = 0  # Start index
-   b = 10  # End index (exclusive)
-   ```
+### Backend
 
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
 
+### Frontend
 
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
+## Docker
 
+```bash
+docker compose up --build
+```
+
+Frontend runs on port 5173.
+Backend runs on port 8000.
+
+## API examples
+
+```bash
+curl "http://localhost:8000/api/v1/fibonacci?n=100&algorithm=fast_doubling"
+curl "http://localhost:8000/api/v1/range?start=0&end=25&algorithm=matrix"
+curl "http://localhost:8000/api/v1/benchmark?n=10000"
+```
+
+## Tests
+
+```bash
+cd backend
+pytest
+```
